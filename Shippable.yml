@@ -1,0 +1,13 @@
+language: python
+
+python:
+  - 3.6
+
+build:
+  pre_ci_boot:
+    options: "--net=host"
+  ci:
+    - cp -R . /app
+    - docker-compose up -d web redis
+    - curl http://localhost:5000
+    - docker-compose down
