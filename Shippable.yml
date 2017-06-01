@@ -11,5 +11,5 @@ build:
     - docker-compose up -d web redis
     - sleep 10
     - docker exec cidockercompose_web_1 ls -alh /
-    - docker exec cidockercompose_web_1 ls -alh .
+    - docker exec cidockercompose_web_1 ls -alh /app
     - docker-compose down
