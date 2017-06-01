@@ -8,6 +8,7 @@ build:
     options: "-v /app:/app"
   ci:
     - cp -R . /app
+    - pip install -U docker-compose
     - docker-compose up -d web redis
     - sleep 10
     - docker exec cidockercompose_web_1 ls -alh /
